@@ -1,0 +1,113 @@
+# 1.Make an reverse number of any provided number
+
+number = 158268
+lista = list(str(number))
+print(lista)
+reverse_list = lista[::-1]
+print(reverse_list)
+reversed_number = int(''.join(map(str,reverse_list)))
+print(reversed_number)
+
+# 2.Average length of word in a sentence
+
+sentence = "Los Angeles Lakers are 2020 NBA Champions."
+lista = list(sentence.split(" "))
+print(lista)
+zbir = 0
+
+for word in lista:
+    zbir += len(word)
+
+average_length = round(zbir/len(lista))
+print(average_length)
+
+# 3.Sum of two non-negative numbers provided as strings
+
+num1 ="56748"
+num2 = "55987"
+sum = int(num1) + int(num2)
+print(sum)
+
+# 4. Given an string, find first non-repetitive character in it, and print its index
+
+string = "STRENGTHLESSNESSES"
+list = list(string)
+for _ in range(len(list)-1):
+    counter = list.count(list[_])
+    if counter == 1:
+        print(f"{list[_]} is non-repetitve. Its position is: {_}.")
+
+
+#5. Given Array, find if it is monotinic or no.
+lista2=[7,9,15,14,20]
+lista = [2,4,5,6,8,9]
+for _ in range(len(lista)-1):
+    if lista[_+1]-lista[_]<=0:
+        print ("False")
+
+for _ in range(len(lista2)-1):
+    if lista2[_+1]-lista2[_]<=0:
+        print ("False")
+
+#6. Moving Zeros: Given an array, move all zeros to its end.
+lista = [0,1,3,5,7,0,1]
+for element in lista:
+    if element == 0:
+        old_index = lista.index(element)
+        lista.insert(len(lista)-1, lista.pop(old_index))
+
+print(lista)
+
+#7. Given an array containing None values fill in the None values with most recent non value in the array.
+
+lista = [None,1, None, 0, 4, 7, None, 9, 10, None]
+for _ in range(len(lista)):
+    if lista[_] == None:
+        for i in range(0,_):
+            if lista[i] != None:
+                lista[_] = lista[i]
+                break
+if lista[0] == None:
+   lista[0] = 0
+
+print(lista)
+
+#8. Matched and Mismatched Words: Return a array that has the words that appear in one sentence and not in the other, and an array with words in common.
+
+sentence1 = 'For a long time Pierre could not understand, but when he did, he jumped up from the sofa, ' \
+            'seized Boris under the elbow in his quick, clumsy way, and, blushing far more than Boris, ' \
+            'began to speak with a feeling of mingled shame and vexation.'
+
+sentence2 = 'These were very numerous, for the place was thickly inhabited, and a large group of the queer people ' \
+            'clustered near, gazing sharply upon the strangers who had emerged from the long spiral stairway.'
+
+lista1 = sentence1.split()
+lista2 = sentence2.split()
+
+common_words = [word for word in lista1 if word in lista2]
+print(common_words)
+words_only_in_first_sentence = [word for word in lista1 if word not in lista2]
+print(words_only_in_first_sentence)
+
+#9. Print array of prime numbers in interval
+
+interval = range(100)
+prime_numbers = []
+
+
+def is_prime_number(broj, lista):
+    is_prime = True
+    if broj < 2:
+        is_prime = True
+    else:
+        for i in range(2, broj):
+            if broj % i == 0:
+                is_prime = False
+
+    if is_prime:
+        lista.append(broj)
+
+
+for number in interval:
+    is_prime_number(number, prime_numbers)
+print(prime_numbers)
