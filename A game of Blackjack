@@ -1,3 +1,5 @@
+#A code for a game of Blackjack.
+
 import random
 from replit import clear
 from art import logo
