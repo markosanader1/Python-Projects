@@ -1,3 +1,9 @@
+'''This code utilizes the Natural Language Processing capabilities of the site: https://trackapi.nutritionix.com. User inputs type and a number of exercises he/she did today.
+The code then sends a post request "to https://trackapi.nutritionix.com/v2/natural/exercise" containing necessary information about the user(height, weight, age...)
+The code then extracts information about the type of exercise, its number, duration of exercising, and spent callories. 
+The code then writes the obtained information to the Excel Table on www.sheety.com by post request.'''
+
+
 import os
 import requests
 from datetime import datetime
